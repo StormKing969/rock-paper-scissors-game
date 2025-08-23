@@ -1,6 +1,35 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Nunito+Sans:ital,opsz,wght@0,6..12,200..1000;1,6..12,200..1000&display=swap");
 @import "tailwindcss";
+
+@theme {
+  --font-sans: "Barlow Semi Condensed", ui-sans-serif, system-ui, sans-serif;
+}
 
 html,
 body {
-    @apply p-0 m-0 box-border min-h-screen h-full w-full;
+  @apply p-0 m-0 box-border min-h-screen h-full w-full;
+}
+
+.home-style {
+  @apply w-full h-full min-w-[375px] p-8;
+}
+
+.scissors-gradient {
+    @apply bg-gradient-to-t from-[hsl(39_89%_49%)] to-[hsl(40_84%_53%)]
+}
+
+.paper-gradient {
+    @apply bg-gradient-to-t from-[hsl(230_89%_62%)] to-[hsl(230_89%_65%)]
+}
+
+.rock-gradient {
+    @apply bg-gradient-to-t from-[hsl(349_71%_52%)] to-[hsl(349_70%_56%)]
+}
+
+.lizard-gradient {
+    @apply bg-gradient-to-t from-[hsl(261_73%_60%)] to-[hsl(261_72%_63%)]
+}
+
+.spock-gradient {
+    @apply bg-gradient-to-t from-[hsl(189_59%_53%)] to-[hsl(189_58%_57%)]
 }
