@@ -12,12 +12,12 @@ const Home = () => {
   return (
     <section
       className={
-        "home-style bg-gradient-to-t from-[hsl(237_49%_15%)] to-[hsl(214_47%_23%)] transition-colors relative"
+        "w-full h-screen min-w-[375px] max-w-[1366px] p-8 bg-gradient-to-t from-[hsl(237_49%_15%)] to-[hsl(214_47%_23%)] transition-colors relative"
       }
     >
       <ScoreBoard currentScore={currentScore} />
 
-      {openRuleBook ? <RuleBook /> : null}
+      {openRuleBook ? <RuleBook setOpenRuleBook={setOpenRuleBook} /> : null}
 
       <section className={"relative"}>
         <SelectionBoard choice={choice} setChoice={setChoice} />

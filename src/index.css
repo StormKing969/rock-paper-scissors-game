@@ -10,10 +10,6 @@ body {
   @apply p-0 m-0 box-border min-h-screen h-full w-full;
 }
 
-.home-style {
-  @apply w-full h-full min-w-[375px] max-w-[1366px] p-8;
-}
-
 .scissors-gradient {
     @apply bg-gradient-to-t from-[hsl(39_89%_49%)] to-[hsl(40_84%_53%)]
 }

@@ -9,7 +9,7 @@ const SelectionBoard = ({
 }) => {
   return (
     <div
-      className={`${choice.length !== 0 ? "hidden" : "visible"} my-25 flex flex-col items-center justify-center h-[400px] mx-5`}
+      className={`${choice.length !== 0 ? "hidden" : "visible"} my-18 flex flex-col items-center justify-center h-[400px] mx-5`}
     >
       <div className={"absolute"}>
         <img
