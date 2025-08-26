@@ -7,6 +7,7 @@ import RuleBook from "./RuleBook.tsx";
 const Home = () => {
   const [currentScore, setCurrentScore] = useState<number>(0);
   const [choice, setChoice] = useState<string>("");
+  const [houseChoice, setHouseChoice] = useState<string>("");
   const [openRuleBook, setOpenRuleBook] = useState<boolean>(false);
 
   return (
@@ -20,18 +21,20 @@ const Home = () => {
       {openRuleBook ? <RuleBook setOpenRuleBook={setOpenRuleBook} /> : null}
 
       <section className={"relative"}>
-        <SelectionBoard choice={choice} setChoice={setChoice} />
+        <SelectionBoard choice={choice} setChoice={setChoice} setHouseChoice={setHouseChoice} />
 
-        <GameDecision choice={choice} setCurrentScore={setCurrentScore} />
+        <GameDecision choice={choice} houseChoice={houseChoice} setCurrentScore={setCurrentScore} />
       </section>
 
       <div
-        className={"flex flex-col justify-center items-center cursor-pointer"}
+        className={
+          "absolute cursor-pointer bottom-10 left-1/2 -translate-x-1/2 sm:left-[85%] sm:transition-[translate, width] duration-500 ease-in-out"
+        }
         onClick={() => setOpenRuleBook(!openRuleBook)}
       >
         <h1
           className={
-            "uppercase border text-white w-fit py-1 px-8 font-light text-2xl rounded-[6px] sm:ml-auto"
+            "uppercase border text-white w-fit py-1 px-8 font-light text-2xl rounded-[6px]"
           }
         >
           Rules

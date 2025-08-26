@@ -1,12 +1,22 @@
 import React, { type SetStateAction } from "react";
+import { gameAI } from "../lib/utils.ts";
 
 const SelectionBoard = ({
   choice,
   setChoice,
+  setHouseChoice,
 }: {
   choice: string;
   setChoice: React.Dispatch<SetStateAction<string>>;
+  setHouseChoice: React.Dispatch<SetStateAction<string>>;
 }) => {
+  const handleOnClick = (userChoice: string) => {
+    setChoice(userChoice);
+    gameAI(userChoice).then((aiSelection) => {
+      setHouseChoice(aiSelection);
+    });
+  };
+
   return (
     <div
       className={`${choice.length !== 0 ? "hidden" : "visible"} my-18 flex flex-col items-center justify-center h-[400px] mx-5`}
@@ -22,7 +32,7 @@ const SelectionBoard = ({
           className={
             "absolute -top-8 left-1/2 -translate-x-1/2 p-3 scissors-gradient rounded-full shadow-[0_5px_0px_0px_hsl(39_89%_29%)] cursor-pointer"
           }
-          onClick={() => setChoice("scissors")}
+          onClick={() => handleOnClick("scissors")}
         >
           <div
             className={
@@ -43,7 +53,7 @@ const SelectionBoard = ({
           className={
             "absolute top-2/5 -translate-y-1/2 -right-8 p-3 paper-gradient rounded-full shadow-[0_5px_0px_0px_hsl(230_89%_42%)] cursor-pointer"
           }
-          onClick={() => setChoice("paper")}
+          onClick={() => handleOnClick("paper")}
         >
           <div
             className={
@@ -64,7 +74,7 @@ const SelectionBoard = ({
           className={
             "absolute top-2/5 -translate-y-1/2 -left-8 p-3 spock-gradient rounded-full shadow-[0_5px_0px_0px_hsl(189_59%_33%)] cursor-pointer"
           }
-          onClick={() => setChoice("spock")}
+          onClick={() => handleOnClick("spock")}
         >
           <div
             className={
@@ -85,7 +95,7 @@ const SelectionBoard = ({
           className={
             "absolute -bottom-5 right-8 p-3 rock-gradient rounded-full shadow-[0_5px_0px_0px_hsl(349_71%_32%)] cursor-pointer"
           }
-          onClick={() => setChoice("rock")}
+          onClick={() => handleOnClick("rock")}
         >
           <div
             className={
@@ -106,7 +116,7 @@ const SelectionBoard = ({
           className={
             "absolute -bottom-5 left-8 p-3 lizard-gradient rounded-full shadow-[0_5px_0px_0px_hsl(261_73%_40%)] cursor-pointer"
           }
-          onClick={() => setChoice("lizard")}
+          onClick={() => handleOnClick("lizard")}
         >
           <div
             className={
