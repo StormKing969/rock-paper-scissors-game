@@ -21,9 +21,19 @@ const Home = () => {
       {openRuleBook ? <RuleBook setOpenRuleBook={setOpenRuleBook} /> : null}
 
       <section className={"relative"}>
-        <SelectionBoard choice={choice} setChoice={setChoice} setHouseChoice={setHouseChoice} />
+        <SelectionBoard
+          choice={choice}
+          setChoice={setChoice}
+          setHouseChoice={setHouseChoice}
+        />
 
-        <GameDecision choice={choice} houseChoice={houseChoice} setCurrentScore={setCurrentScore} />
+        <GameDecision
+          choice={choice}
+          houseChoice={houseChoice}
+          setChoice={setChoice}
+          setCurrentScore={setCurrentScore}
+          setHouseChoice={setHouseChoice}
+        />
       </section>
 
       <div

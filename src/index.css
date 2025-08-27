@@ -7,25 +7,53 @@
 
 html,
 body {
-  @apply p-0 m-0 box-border min-h-screen h-full w-full;
+  @apply p-0 m-0 box-border min-h-screen h-full w-full tracking-wider;
 }
 
 .scissors-gradient {
-    @apply bg-gradient-to-t from-[hsl(39_89%_49%)] to-[hsl(40_84%_53%)]
+    @apply bg-gradient-to-t from-[hsl(39_89%_49%)] to-[hsl(40_84%_53%)] shadow-[0_5px_0px_0px_hsl(39_89%_29%)]
+}
+
+.scissors-inner-gradient {
+    @apply shadow-[0_-2px_5px_hsl(40_84%_33%)]
 }
 
 .paper-gradient {
-    @apply bg-gradient-to-t from-[hsl(230_89%_62%)] to-[hsl(230_89%_65%)]
+    @apply bg-gradient-to-t from-[hsl(230_89%_62%)] to-[hsl(230_89%_65%)] shadow-[0_5px_0px_0px_hsl(230_89%_42%)]
+}
+
+.paper-inner-gradient {
+    @apply shadow-[0_-2px_5px_hsl(230_89%_45%)]
 }
 
 .rock-gradient {
-    @apply bg-gradient-to-t from-[hsl(349_71%_52%)] to-[hsl(349_70%_56%)]
+    @apply bg-gradient-to-t from-[hsl(349_71%_52%)] to-[hsl(349_70%_56%)] shadow-[0_5px_0px_0px_hsl(349_71%_32%)]
+}
+
+.rock-inner-gradient {
+    @apply shadow-[0_-2px_5px_hsl(349_70%_36%)]
 }
 
 .lizard-gradient {
-    @apply bg-gradient-to-t from-[hsl(261_73%_60%)] to-[hsl(261_72%_63%)]
+    @apply bg-gradient-to-t from-[hsl(261_73%_60%)] to-[hsl(261_72%_63%)] shadow-[0_5px_0px_0px_hsl(261_73%_40%)]
+}
+
+.lizard-inner-gradient {
+    @apply shadow-[0_-2px_5px_hsl(261_72%_43%)]
 }
 
 .spock-gradient {
-    @apply bg-gradient-to-t from-[hsl(189_59%_53%)] to-[hsl(189_58%_57%)]
+    @apply bg-gradient-to-t from-[hsl(189_59%_53%)] to-[hsl(189_58%_57%)] shadow-[0_5px_0px_0px_hsl(189_59%_33%)]
+}
+
+.spock-inner-gradient {
+    @apply shadow-[0_-2px_5px_hsl(189_58%_37%)]
+}
+
+.blank-gradient {
+
+}
+
+.blank-inner-gradient {
+    @apply bg-[hsl(237_45%_15%)] opacity-50
 }
