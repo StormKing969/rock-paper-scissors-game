@@ -8,8 +8,8 @@ const GameDecision = ({
   setCurrentScore,
   setHouseChoice,
 }: {
-  choice: "rock" | "paper" | "scissors" | "lizard" | "spock";
-  houseChoice: "rock" | "paper" | "scissors" | "lizard" | "spock";
+  choice: string;
+  houseChoice: string;
   setChoice: React.Dispatch<SetStateAction<string>>;
   setCurrentScore: React.Dispatch<SetStateAction<number>>;
   setHouseChoice: React.Dispatch<SetStateAction<string>>;
