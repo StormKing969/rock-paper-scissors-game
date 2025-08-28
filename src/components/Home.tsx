@@ -11,7 +11,7 @@ const Home = () => {
   const [openRuleBook, setOpenRuleBook] = useState<boolean>(false);
 
   return (
-    <section
+    <div
       className={
         "w-full h-screen min-w-[375px] max-w-[1366px] p-8 bg-gradient-to-t from-[hsl(237_49%_15%)] to-[hsl(214_47%_23%)] transition-colors relative"
       }
@@ -20,7 +20,7 @@ const Home = () => {
 
       {openRuleBook ? <RuleBook setOpenRuleBook={setOpenRuleBook} /> : null}
 
-      <section className={"relative"}>
+      <main className={"relative"}>
         <SelectionBoard
           choice={choice}
           setChoice={setChoice}
@@ -34,9 +34,9 @@ const Home = () => {
           setCurrentScore={setCurrentScore}
           setHouseChoice={setHouseChoice}
         />
-      </section>
+      </main>
 
-      <div
+      <footer
         className={
           "absolute cursor-pointer bottom-10 left-1/2 -translate-x-1/2 sm:left-[85%] sm:transition-[translate, width] duration-500 ease-in-out"
         }
@@ -49,8 +49,8 @@ const Home = () => {
         >
           Rules
         </h1>
-      </div>
-    </section>
+      </footer>
+    </div>
   );
 };
 

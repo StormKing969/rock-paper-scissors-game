@@ -1,6 +1,6 @@
 const ScoreBoard = ({ currentScore }: { currentScore: number }) => {
   return (
-    <section className={"flex justify-center"}>
+    <header className={"flex justify-center"}>
       <div
         className={
           "border-3 border-[hsl(217_16%_45%)] rounded-[6px] p-3 flex flex-row items-center justify-between w-full max-w-[600px]"
@@ -19,7 +19,7 @@ const ScoreBoard = ({ currentScore }: { currentScore: number }) => {
           </span>
         </div>
       </div>
-    </section>
+    </header>
   );
 };
 
