@@ -8,8 +8,8 @@ const GameDecision = ({
   setCurrentScore,
   setHouseChoice,
 }: {
-  choice: string;
-  houseChoice: string;
+  choice: "rock" | "paper" | "scissors" | "lizard" | "spock";
+  houseChoice: "rock" | "paper" | "scissors" | "lizard" | "spock";
   setChoice: React.Dispatch<SetStateAction<string>>;
   setCurrentScore: React.Dispatch<SetStateAction<number>>;
   setHouseChoice: React.Dispatch<SetStateAction<string>>;
@@ -54,7 +54,7 @@ const GameDecision = ({
     <div
       className={`${choice.length === 0 ? "hidden" : "visible"} text-white my-18`}
     >
-      <div className={"flex flex-row items-center justify-evenly relative"}>
+      <div className={"flex flex-row items-center justify-evenly"}>
         <div
           className={
             "flex flex-col-reverse sm:flex-col items-center justify-center"
@@ -63,19 +63,22 @@ const GameDecision = ({
           <h1 className={"uppercase font-semibold sm:mb-10 mt-10"}>
             You picked
           </h1>
-          <div
-            className={`p-4 ${choice}-gradient rounded-full cursor-pointer w-fit`}
-          >
+
+          <div className={`${playerWon ? "glow-wrapper" : null}`}>
             <div
-              className={`bg-white rounded-full p-6 sm:p-8 ${choice}-inner-gradient`}
+              className={`p-4 ${choice}-gradient rounded-full cursor-pointer w-fit ${playerWon ? "wonGame" : null}`}
             >
-              <img
-                src={`/icon-${choice}.svg`}
-                alt={"Scissors Img"}
-                className={
-                  "w-[45px] h-[45px] sm:w-[80px] sm:h-[80px] object-contain transition-[width, height] duration-300 ease-in-out"
-                }
-              />
+              <div
+                className={`bg-white rounded-full p-6 sm:p-8 ${choice}-inner-gradient`}
+              >
+                <img
+                  src={`/icon-${choice}.svg`}
+                  alt={"Scissors Img"}
+                  className={
+                    "w-[45px] h-[45px] sm:w-[80px] sm:h-[80px] object-contain transition-[width, height] duration-300 ease-in-out"
+                  }
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -113,25 +116,30 @@ const GameDecision = ({
           <h1 className={"uppercase font-semibold mt-10 sm:mb-10"}>
             The House Picked
           </h1>
+
           <div
-            className={`p-4 ${houseChoice}-gradient rounded-full cursor-pointer w-fit`}
+            className={`${!playerWon && playerWon !== null ? "glow-wrapper" : null}`}
           >
             <div
-              className={`bg-white rounded-full p-6 sm:p-8 ${houseChoice ? houseChoice : "blank"}-inner-gradient`}
+              className={`p-4 ${houseChoice}-gradient rounded-full cursor-pointer w-fit ${!playerWon && playerWon !== null ? "wonGame" : null}`}
             >
-              {!houseChoice ? (
-                <div className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] flex items-center justify-center">
-                  <div className="w-8 h-8 border-4 border-gray-300 border-t-transparent rounded-full animate-spin"></div>
-                </div>
-              ) : (
-                <img
-                  src={`/icon-${houseChoice}.svg`}
-                  alt={`${houseChoice}`}
-                  className={
-                    "w-[45px] h-[45px] sm:w-[80px] sm:h-[80px] object-contain transition-[width, height] duration-300 ease-in-out"
-                  }
-                />
-              )}
+              <div
+                className={`bg-white rounded-full p-6 sm:p-8 ${houseChoice ? houseChoice : "blank"}-inner-gradient`}
+              >
+                {!houseChoice ? (
+                  <div className="w-[60px] h-[60px] sm:w-[80px] sm:h-[80px] flex items-center justify-center">
+                    <div className="w-8 h-8 border-4 border-gray-300 border-t-transparent rounded-full animate-spin"></div>
+                  </div>
+                ) : (
+                  <img
+                    src={`/icon-${houseChoice}.svg`}
+                    alt={`${houseChoice}`}
+                    className={
+                      "w-[45px] h-[45px] sm:w-[80px] sm:h-[80px] object-contain transition-[width, height] duration-300 ease-in-out"
+                    }
+                  />
+                )}
+              </div>
             </div>
           </div>
         </div>

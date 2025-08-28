@@ -11,49 +11,94 @@ body {
 }
 
 .scissors-gradient {
-    @apply bg-gradient-to-t from-[hsl(39_89%_49%)] to-[hsl(40_84%_53%)] shadow-[0_5px_0px_0px_hsl(39_89%_29%)]
+  @apply bg-gradient-to-t from-[hsl(39_89%_49%)] to-[hsl(40_84%_53%)] shadow-[0_5px_0px_0px_hsl(39_89%_29%)];
 }
 
 .scissors-inner-gradient {
-    @apply shadow-[0_-2px_5px_hsl(40_84%_33%)]
+  @apply shadow-[0_-2px_5px_hsl(40_84%_33%)];
 }
 
 .paper-gradient {
-    @apply bg-gradient-to-t from-[hsl(230_89%_62%)] to-[hsl(230_89%_65%)] shadow-[0_5px_0px_0px_hsl(230_89%_42%)]
+  @apply bg-gradient-to-t from-[hsl(230_89%_62%)] to-[hsl(230_89%_65%)] shadow-[0_5px_0px_0px_hsl(230_89%_42%)];
 }
 
 .paper-inner-gradient {
-    @apply shadow-[0_-2px_5px_hsl(230_89%_45%)]
+  @apply shadow-[0_-2px_5px_hsl(230_89%_45%)];
 }
 
 .rock-gradient {
-    @apply bg-gradient-to-t from-[hsl(349_71%_52%)] to-[hsl(349_70%_56%)] shadow-[0_5px_0px_0px_hsl(349_71%_32%)]
+  @apply bg-gradient-to-t from-[hsl(349_71%_52%)] to-[hsl(349_70%_56%)] shadow-[0_5px_0px_0px_hsl(349_71%_32%)];
 }
 
 .rock-inner-gradient {
-    @apply shadow-[0_-2px_5px_hsl(349_70%_36%)]
+  @apply shadow-[0_-2px_5px_hsl(349_70%_36%)];
 }
 
 .lizard-gradient {
-    @apply bg-gradient-to-t from-[hsl(261_73%_60%)] to-[hsl(261_72%_63%)] shadow-[0_5px_0px_0px_hsl(261_73%_40%)]
+  @apply bg-gradient-to-t from-[hsl(261_73%_60%)] to-[hsl(261_72%_63%)] shadow-[0_5px_0px_0px_hsl(261_73%_40%)];
 }
 
 .lizard-inner-gradient {
-    @apply shadow-[0_-2px_5px_hsl(261_72%_43%)]
+  @apply shadow-[0_-2px_5px_hsl(261_72%_43%)];
 }
 
 .spock-gradient {
-    @apply bg-gradient-to-t from-[hsl(189_59%_53%)] to-[hsl(189_58%_57%)] shadow-[0_5px_0px_0px_hsl(189_59%_33%)]
+  @apply bg-gradient-to-t from-[hsl(189_59%_53%)] to-[hsl(189_58%_57%)] shadow-[0_5px_0px_0px_hsl(189_59%_33%)];
 }
 
 .spock-inner-gradient {
-    @apply shadow-[0_-2px_5px_hsl(189_58%_37%)]
-}
-
-.blank-gradient {
-
+  @apply shadow-[0_-2px_5px_hsl(189_58%_37%)];
 }
 
 .blank-inner-gradient {
-    @apply bg-[hsl(237_45%_15%)] opacity-50
+  @apply bg-[hsl(237_45%_15%)] opacity-50;
+}
+
+.glow-wrapper {
+  @apply relative -rotate-z-1 isolate;
+}
+
+.glow-wrapper::before {
+  content: "";
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 9999px;
+  filter: blur(6px);
+  z-index: 0;
+  animation: pulse-glow 3s infinite ease-in-out;
+  background: radial-gradient(
+    circle,
+    rgba(129, 147, 137, 0.23) 0%,
+    rgba(210, 220, 210, 0.23) 70%
+  );
+}
+
+.wonGame {
+  @apply transition-transform duration-300 ease-in-out animate-[inner-glow_3s_ease-in-out_infinite];
+}
+
+@keyframes pulse-glow {
+  0%,
+  100% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 0.6;
+  }
+  50% {
+    transform: translate(-50%, -50%) scale(1.2);
+    opacity: 1;
+  }
+}
+
+@keyframes inner-glow {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
 }
